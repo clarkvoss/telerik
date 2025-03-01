@@ -1,0 +1,19 @@
+Step-by-Step Guide:
+
+Install Wine, Winetricks, and Mono:
+Open a terminal and execute the following command to install the necessary dependencies:
+sudo apt update 
+sudo apt install mono-complete wine winetricks -y
+2. Download ysoserial.net:
+
+Visit the ysoserial.net releases page and download the latest release of ysoserial.net.
+Unzip the downloaded file using the following command:
+unzip ysoserial.zip
+3. Install .NET Framework 4.8 using Wine:
+
+Use Winetricks to install the .NET Framework 4.8:
+winetricks dotnet48
+4. Run ysoserial.exe in Wine:
+
+Navigate to the directory where ysoserial.exe is located
+wine ysoserial.exe -f BinaryFormatter -g TypeConfuseDelegate -o base64 -c "ping 127.0.0.1"
